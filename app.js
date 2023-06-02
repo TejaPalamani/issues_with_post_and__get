@@ -178,7 +178,7 @@ app.get("/districts/:districtId/details/", async (request, response) => {
   const { districtId } = request.params;
 
   const getIndividualState = `SELECT state_name as stateName FROM
-    state INNER JOIN district ON state.state_id = district.district_id
+    state INNER JOIN district ON state.state_id = district.state_id
     where district_id = ${districtId}`;
 
   const getIndividualStateResponse = await db.all(getIndividualState);
